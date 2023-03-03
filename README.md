@@ -1,4 +1,9 @@
-### Hi there 👋
+### 𝙉𝙚𝙤
+### ➥Programming
+### ➥ CyberSecurity
+### ➥GameDev
+### ✉ royalxeyaloglu884@gmail.com
+### ✉ neoekstra@gmail.com
 
 <!--
 **NeoRoyal/NeoRoyal** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.

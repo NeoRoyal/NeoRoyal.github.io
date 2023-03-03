@@ -22,193 +22,382 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" integrity="sha512-3J8teBiHrSyaaRBajZyIEtpDsXdPq1gsznKWIVb5CnorQuFhjWGhWe54z8YNnHHr7MZuExb9m5kvf964HiT1Sw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <style>
-        .typed-cursor {
-            font-size: 30px;
+    .typed-cursor {
+        font-size: 30px;
+        opacity: 1;
+        -webkit-animation: blink 0.7s infinite;
+        -moz-animation: blink 0.7s infinite;
+        animation: blink 0.7s infinite;
+    }
+
+    #sozler {
+        display: inline;
+    }
+
+    p {
+        font-size: 30px;
+        margin: 0;
+        letter-spacing: 3px;
+    }
+
+    body {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none !important;
+    }
+
+
+
+    .center {
+        font-family: 'Montserrat', sans-serif;
+
+
+        position: fixed;
+        /* or absolute */
+        top: 50%;
+        left: 50%;
+        /* bring your own prefixes */
+        transform: translate(-50%, -50%);
+        animation: fadein 3s;
+        -moz-animation: fadein 3s;
+        /* Firefox */
+        -webkit-animation: fadein 3s;
+        /* Safari and Chrome */
+        -o-animation: fadein 3s;
+        /* Opera */
+    }
+
+    @keyframes fadein {
+        from {
+            opacity: 0;
+        }
+
+        to {
             opacity: 1;
-            -webkit-animation: blink 0.7s infinite;
-            -moz-animation: blink 0.7s infinite;
-            animation: blink 0.7s infinite;
+        }
+    }
+
+    @-moz-keyframes fadein {
+
+        /* Firefox */
+        from {
+            opacity: 0;
         }
 
-        #sozler {
-            display: inline;
+        to {
+            opacity: 1;
+        }
+    }
+
+    @-webkit-keyframes fadein {
+
+        /* Safari and Chrome */
+        from {
+            opacity: 0;
         }
 
-        p {
-            font-size: 30px;
-            margin: 0;
-            letter-spacing: 3px;
+        to {
+            opacity: 1;
+        }
+    }
+
+    @-o-keyframes fadein {
+
+        /* Opera */
+        from {
+            opacity: 0;
         }
 
-        body {
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            -o-user-select: none;
-            user-select: none;
+        to {
+            opacity: 1;
+        }
+    }
+
+    html,
+    body {
+        overflow: hidden;
+        color: #fefeff;
+    }
+
+    body {
+        margin: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    canvas {
+        width: 100%;
+        height: 100%;
+        z-index: -999999999;
+    }
+
+    [class^="letter"] {
+        -webkit-transition: opacity 3s ease;
+        -moz-transition: opacity 3s ease;
+        transition: opacity 3s ease;
+    }
+
+    .letter-0 {
+        transition-delay: 0.2s;
+    }
+
+    .letter-1 {
+        transition-delay: 0.4s;
+    }
+
+    .letter-2 {
+        transition-delay: 0.6s;
+    }
+
+    .letter-3 {
+        transition-delay: 0.8s;
+    }
+
+    .letter-4 {
+        transition-delay: 1.0s;
+    }
+
+    .letter-5 {
+        transition-delay: 1.2s;
+    }
+
+    .letter-6 {
+        transition-delay: 1.4s;
+    }
+
+    .letter-7 {
+        transition-delay: 1.6s;
+    }
+
+    .letter-8 {
+        transition-delay: 1.8s;
+    }
+
+    .letter-9 {
+        transition-delay: 2.0s;
+    }
+
+    .letter-10 {
+        transition-delay: 2.2s;
+    }
+
+    .letter-11 {
+        transition-delay: 2.4s;
+    }
+
+    .letter-12 {
+        transition-delay: 2.6s;
+    }
+
+    .letter-13 {
+        transition-delay: 2.8s;
+    }
+
+    .letter-14 {
+        transition-delay: 3.0s;
+    }
+
+    .letter-15 {
+        transition-delay: 3.2s;
+    }
+</style>
+
+<style>
+    .typed-cursor {
+        font-size: 30px;
+        opacity: 1;
+        -webkit-animation: blink 0.7s infinite;
+        -moz-animation: blink 0.7s infinite;
+        animation: blink 0.7s infinite;
+    }
+
+    #neokicik {
+        display: inline;
+    }
+
+    p {
+        font-size: 30px;
+        margin: 0;
+        letter-spacing: 3px;
+    }
+
+    body {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none !important;
+    }
+
+
+
+    .center {
+        font-family: 'Montserrat', sans-serif;
+
+
+        position: fixed;
+        /* or absolute */
+        top: 50%;
+        left: 50%;
+        /* bring your own prefixes */
+        transform: translate(-50%, -50%);
+        animation: fadein 3s;
+        -moz-animation: fadein 3s;
+        /* Firefox */
+        -webkit-animation: fadein 3s;
+        /* Safari and Chrome */
+        -o-animation: fadein 3s;
+        /* Opera */
+    }
+
+    @keyframes fadein {
+        from {
+            opacity: 0;
         }
 
-        a {
-            color: inherit;
-            text-decoration: none !important;
+        to {
+            opacity: 1;
+        }
+    }
+
+    @-moz-keyframes fadein {
+
+        /* Firefox */
+        from {
+            opacity: 0;
         }
 
+        to {
+            opacity: 1;
+        }
+    }
 
+    @-webkit-keyframes fadein {
 
-        .center {
-            font-family: 'Montserrat', sans-serif;
-
-
-            position: fixed;
-            /* or absolute */
-            top: 50%;
-            left: 50%;
-            /* bring your own prefixes */
-            transform: translate(-50%, -50%);
-            animation: fadein 3s;
-            -moz-animation: fadein 3s;
-            /* Firefox */
-            -webkit-animation: fadein 3s;
-            /* Safari and Chrome */
-            -o-animation: fadein 3s;
-            /* Opera */
+        /* Safari and Chrome */
+        from {
+            opacity: 0;
         }
 
-        @keyframes fadein {
-            from {
-                opacity: 0;
-            }
+        to {
+            opacity: 1;
+        }
+    }
 
-            to {
-                opacity: 1;
-            }
+    @-o-keyframes fadein {
+
+        /* Opera */
+        from {
+            opacity: 0;
         }
 
-        @-moz-keyframes fadein {
-
-            /* Firefox */
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
+        to {
+            opacity: 1;
         }
+    }
 
-        @-webkit-keyframes fadein {
+    html,
+    body {
+        overflow: hidden;
+        color: #fefeff;
+    }
 
-            /* Safari and Chrome */
-            from {
-                opacity: 0;
-            }
+    body {
+        margin: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
 
-            to {
-                opacity: 1;
-            }
-        }
+    canvas {
+        width: 100%;
+        height: 100%;
+        z-index: -999999999;
+    }
 
-        @-o-keyframes fadein {
+    [class^="letter"] {
+        -webkit-transition: opacity 3s ease;
+        -moz-transition: opacity 3s ease;
+        transition: opacity 3s ease;
+    }
 
-            /* Opera */
-            from {
-                opacity: 0;
-            }
+    .letter-0 {
+        transition-delay: 0.2s;
+    }
 
-            to {
-                opacity: 1;
-            }
-        }
+    .letter-1 {
+        transition-delay: 0.4s;
+    }
 
-        html,
-        body {
-            overflow: hidden;
-            color: #fefeff;
-        }
+    .letter-2 {
+        transition-delay: 0.6s;
+    }
 
-        body {
-            margin: 0;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-        }
+    .letter-3 {
+        transition-delay: 0.8s;
+    }
 
-        canvas {
-            width: 100%;
-            height: 100%;
-            z-index: -999999999;
-        }
+    .letter-4 {
+        transition-delay: 1.0s;
+    }
 
-        [class^="letter"] {
-            -webkit-transition: opacity 3s ease;
-            -moz-transition: opacity 3s ease;
-            transition: opacity 3s ease;
-        }
+    .letter-5 {
+        transition-delay: 1.2s;
+    }
 
-        .letter-0 {
-            transition-delay: 0.2s;
-        }
+    .letter-6 {
+        transition-delay: 1.4s;
+    }
 
-        .letter-1 {
-            transition-delay: 0.4s;
-        }
+    .letter-7 {
+        transition-delay: 1.6s;
+    }
 
-        .letter-2 {
-            transition-delay: 0.6s;
-        }
+    .letter-8 {
+        transition-delay: 1.8s;
+    }
 
-        .letter-3 {
-            transition-delay: 0.8s;
-        }
+    .letter-9 {
+        transition-delay: 2.0s;
+    }
 
-        .letter-4 {
-            transition-delay: 1.0s;
-        }
+    .letter-10 {
+        transition-delay: 2.2s;
+    }
 
-        .letter-5 {
-            transition-delay: 1.2s;
-        }
+    .letter-11 {
+        transition-delay: 2.4s;
+    }
 
-        .letter-6 {
-            transition-delay: 1.4s;
-        }
+    .letter-12 {
+        transition-delay: 2.6s;
+    }
 
-        .letter-7 {
-            transition-delay: 1.6s;
-        }
+    .letter-13 {
+        transition-delay: 2.8s;
+    }
 
-        .letter-8 {
-            transition-delay: 1.8s;
-        }
+    .letter-14 {
+        transition-delay: 3.0s;
+    }
 
-        .letter-9 {
-            transition-delay: 2.0s;
-        }
-
-        .letter-10 {
-            transition-delay: 2.2s;
-        }
-
-        .letter-11 {
-            transition-delay: 2.4s;
-        }
-
-        .letter-12 {
-            transition-delay: 2.6s;
-        }
-
-        .letter-13 {
-            transition-delay: 2.8s;
-        }
-
-        .letter-14 {
-            transition-delay: 3.0s;
-        }
-
-        .letter-15 {
-            transition-delay: 3.2s;
-        }
-    </style>
+    .letter-15 {
+        transition-delay: 3.2s;
+    }
+</style>
 </head>
 <body oncontextmenu="return false;" unselectable="on" onselectstart="return false;"><canvas width="715" height="974"></canvas>
 <audio id="audio" preload="auto" loop>
@@ -219,11 +408,14 @@
 <div class="durum" style="display: none;"></div>
 <p id="sozler" display="none"></p>
 <p id="sozler-fake">NeoRoyal</p>
+<pre></pre>
+<p id="neokicik" display="none"></p>
+<p id="sozler">✉ royalxeyaloglu884@gmail.com</p>
 <div style="letter-spacing: 3;font-size: 15;">
 <div id="center">
 <div class="animated fadeInDown"></div>
 <div class="animated fadeInUp">
-<pre><pre align="middle" style="margin-right: -19px;"><a href="https://github.com/NeoRoyal" ="" target="_blank"><i class="fab fa-github"></i>   </a><a href="https://www.eolymp.com/en/users/hasanov.r" ="" target="_blank"><i class="fas fa-globe"></i>   </a><a href="https://www.instagram.com/hasanovf.r/" target="_blank"><i class="fab fa-instagram"></i></a>   </a></pre></pre><center>
+<pre><pre align="middle" style="margin-right: -19px;"><a href="https://github.com/NeoRoyal" ="" target="_blank"><i class="fab fa-github"></i>   </a><a href="https://www.eolymp.com/en/users/hasanov.r" ="" target="_blank"><i class="fas fa-globe"></i>   </a><a href="https://www.instagram.com/hasanovf.r/" target="_blank"><i class="fab fa-instagram"></i> <a> <a> </a> <a href="royalxeyaloglu884@gmail.com" ="" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a></pre></pre><center>
 <div id="clockDisplay" class="clockStyle">09:44:37 PM</div>
 </center>
 <script>
